@@ -5,7 +5,7 @@
 #   hubot music <url> - post url
 
 module.exports = (robot) ->
-  robot.hear /(https:\/\/soundcloud.com\/[a-z0-9\/-]*)/, (msg) ->
+  robot.hear /^#(https:\/\/soundcloud.com\/[a-z0-9\/-]*)/, (msg) ->
     q = url: msg.match[1]
     msg.http('http://djbu.ason.as/music')
       .query(q)
